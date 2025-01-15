@@ -6,12 +6,12 @@
 
 // PRIMA PARTE 
 
-// seleziono elementi di input 
+// seleziono elementi di OUTPUT
 const listaNumeri = document.getElementById('numbers-list');
 
 const countdownDisplay = document.getElementById('countdown');
 
-
+const formDisplay = document.getElementById ('answers-form');
 
 
 
@@ -58,7 +58,7 @@ console.log(numeriGenerati);
 
 // inizializzo i secondi
 
-let second = 30;
+let second = 2;
 
 // funzione asincrona
 
@@ -69,8 +69,16 @@ const countdown = setInterval (() => {
    if (second === 0) {
       clearInterval (countdown);
 
+      // quando i secondi sono arrivati a 0 aggiungi una classe che nasconde i numeri
+
+      listaNumeri.classList.add("d-none");
+
+      // una volta nascosti i numeri tirami fuori il form con gli input cancellando la classe display none
+
+      formDisplay.classList.remove("d-none");
+
    }
-   
+
    // Altrimenti decrementa di uno fino e aggiornalo continuamente nell'HTML (innerHTML)
    else{
       countdownDisplay.innerHTML = --second;
