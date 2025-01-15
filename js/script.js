@@ -6,7 +6,35 @@
 
 // PRIMA PARTE 
 
-// creo un array dove mi estrapola 5 numeri casuali
+// seleziono elementi di input 
+
+
+
+// creo un array vuoto dove mi inserirà i 5 numeri estrapolati casualmente
+
+let numeriGenerati = [];
+
+for (let i = 0; i < 5; i++){
+
+   let numeriRandom = Math.floor(Math.random()* 50) + 1;
+   
+   if(numeriGenerati.includes(numeriRandom)){
+      i--;
+   } else {
+      numeriGenerati.push(numeriRandom);
+   }
+};
+
+console.log(numeriGenerati);
+
+
+
+
+
+
+
+
+
 
 // creo funzione asincrona (setInterval) per far partire il timer di 30 secondi
 
