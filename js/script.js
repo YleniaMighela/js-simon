@@ -9,7 +9,7 @@
 // seleziono elementi di input 
 const listaNumeri = document.getElementById('numbers-list');
 
-
+const countdownDisplay = document.getElementById('countdown');
 
 
 
@@ -54,14 +54,34 @@ console.log(numeriGenerati);
 
 
 
-
-
-
-
-
-
-
 // creo funzione asincrona (setInterval) per far partire il timer di 30 secondi
+
+// inizializzo i secondi
+
+let second = 30;
+
+// funzione asincrona
+
+const countdown = setInterval (() => {
+
+   // Se i secondi sono uguali a 0 allora ferma il countdown
+
+   if (second === 0) {
+      clearInterval (countdown);
+
+   }
+   
+   // Altrimenti decrementa di uno fino e aggiornalo continuamente nell'HTML (innerHTML)
+   else{
+      countdownDisplay.innerHTML = --second;
+   }
+},1000);
+
+
+
+
+
+
 
 
 // terminato il tempo appaiono i 5 input dove l'utente inserirà i numeri
